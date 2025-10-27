@@ -1,0 +1,151 @@
+/* --- Body --- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeInBody 1s ease-in-out forwards;
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Left Panel --- */
+.left-panel {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1684091762604-a69efbf37f1c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  min-width: 320px;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.left-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.left-panel > div {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* --- Right Panel (Zoom Out) --- */
+.right-panel {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoomOutRight 0.8s ease-out forwards;
+}
+
+@keyframes zoomOutRight {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Form Container --- */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+  animation: zoomOutForm 0.8s ease-out forwards;
+}
+
+@keyframes zoomOutForm {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Form Icons & Inputs --- */
+.input-group-text {
+  background-color: #f1f1f1;
+  border-right: none;
+}
+
+.form-control {
+  border-left: none;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+  border-color: #0d6efd;
+}
+
+/* --- Google Button --- */
+.btn-google {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  padding: 0.5rem;
+  gap: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-google:hover {
+  background: #f7f7f7;
+  color: #000;
+  text-decoration: none;
+}
+
+.btn-google svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1 1 100%;
+    padding: 2rem 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+}
