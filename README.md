@@ -1,9 +1,6 @@
 # 📖 **Online Bookstore E-commerce**
 
 A **simple and efficient e-commerce platform** for books, built using **Node.js, Express, and EJS**, following the **MVC architecture**. 📚
-
-Live Site: [https://book-nest-wgrp.onrender.com](https://book-nest-wgrp.onrender.com)
-
 ---
 
 ## 📌 **Features**
